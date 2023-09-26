@@ -104,6 +104,9 @@
 
 	-webkit-clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
 	clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
+	&:active {
+		scale: 0.97;
+	}
 }
 
 .link {
