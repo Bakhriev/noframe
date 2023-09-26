@@ -5,8 +5,6 @@
 @import './fonts/fonts';
 
 // Sass-utils
-@import './sass-utils/variables';
-@import './sass-utils/center';
 @import './sass-utils/trans';
 @import './sass-utils/disable-mob-hover';
 
@@ -14,11 +12,8 @@
 @import './sass-utils/global';
 
 // UI / DROPDOWN
-@import './components/overlay';
-@import './components/burger';
 
 // Layouts
 @import './layout/header';
 @import './layout/hero';
 @import './layout/footer';
-
