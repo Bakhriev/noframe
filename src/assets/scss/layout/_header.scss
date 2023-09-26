@@ -1,5 +1,7 @@
 .header {
 	padding: 20px 0;
+	transform: translateY(-100px);
+	animation: onMountBot 1s linear forwards;
 
 	// .header__container
 
@@ -73,55 +75,3 @@
 	}
 }
 
-.logo {
-	display: block;
-	flex-shrink: 0;
-}
-
-.btn {
-	color: #000;
-	font-family: 'Noto Mono';
-	font-size: 19px;
-	font-weight: 400;
-	line-height: normal;
-	padding: 10px 15px;
-	min-width: 200px;
-	background-color: #f2f2f2;
-	@media screen and (max-width: 992px) {
-		font-size: 16px;
-	}
-	@media screen and (max-width: 768px) {
-		font-size: 14px;
-		min-width: 140px;
-	}
-	@include trans(background-color, color, clip-path);
-	@include hover {
-		background-color: #222;
-		color: #fff;
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	}
-
-	-webkit-clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
-	clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
-	&:active {
-		scale: 0.97;
-	}
-}
-
-.link {
-	width: max-content;
-	color: #000;
-	font-family: 'Noto Mono';
-	font-size: 19px;
-	font-weight: 400;
-	line-height: normal;
-	display: block;
-	transition:
-		transform 150ms linear,
-		color 150ms linear;
-	@include hover {
-		transform: scale(0.9);
-		color: rgb(69, 67, 67);
-	}
-}

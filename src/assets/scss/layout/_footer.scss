@@ -1,5 +1,8 @@
 .footer {
 	padding: 20px 0;
+	transform: translateY(50px);
+	animation: onMountTop 1s linear forwards;
+	animation-delay: 1s;
 	// .footer__container
 
 	&__container {

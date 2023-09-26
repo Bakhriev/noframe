@@ -1,20 +1,13 @@
-.main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
 .hero {
 	// .hero__container
 	@media screen and (max-width: 1023px) {
 		padding: 50px 0;
 	}
-
-	&__container {
-	}
 }
 
 .title {
 	position: relative;
+	animation: onMountTop 1s ease-in-out;
 	z-index: 3;
 	color: #000;
 	font-family: 'UA-brand';
@@ -41,18 +34,10 @@
 		color: #fff;
 	}
 }
-.wrapper {
-	position: relative;
-}
-.blur-layer {
-	position: fixed;
-	z-index: 2;
-	inset: 0;
-	@media screen and (max-width: 1023px) {
-		display: none;
-	}
-}
+
 .box-layer {
+	animation: onMountCircle 2s linear;
+
 	position: relative;
 	top: 85px;
 	left: 70px;
@@ -98,14 +83,6 @@
 	transform: rotate(341deg);
 }
 
-.header,
-.footer {
-	position: relative;
-	z-index: 25;
-}
-.main {
-	position: relative;
-}
 .layers-wrapper {
 	position: absolute;
 	width: 100%;

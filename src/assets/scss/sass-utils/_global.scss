@@ -8,6 +8,7 @@ body {
 
 // Wrapper
 .wrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -16,7 +17,12 @@ body {
 }
 
 .main {
+	position: relative;
 	flex-grow: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 // Container
@@ -67,4 +73,106 @@ body {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.header,
+.footer {
+	position: relative;
+	z-index: 25;
+}
+
+.link {
+	width: max-content;
+	color: #000;
+	font-family: 'Noto Mono';
+	font-size: 19px;
+	font-weight: 400;
+	line-height: normal;
+	display: block;
+	transition:
+		transform 150ms linear,
+		color 150ms linear;
+	@include hover {
+		transform: scale(0.9);
+		color: rgb(69, 67, 67);
+	}
+}
+
+.logo {
+	display: block;
+	flex-shrink: 0;
+}
+
+.btn {
+	color: #000;
+	font-family: 'Noto Mono';
+	font-size: 19px;
+	font-weight: 400;
+	line-height: normal;
+	padding: 10px 15px;
+	min-width: 200px;
+	background-color: #f2f2f2;
+	@media screen and (max-width: 992px) {
+		font-size: 16px;
+	}
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+		min-width: 140px;
+	}
+	@include trans(background-color, color, clip-path);
+	@include hover {
+		background-color: #222;
+		color: #fff;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+
+	-webkit-clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
+	clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
+	&:active {
+		scale: 0.97;
+	}
+}
+
+@keyframes onMountLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes onMountTop {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes onMountBot {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes onMountCircle {
+	0% {
+		opacity: 0;
+		clip-path: circle(1.8% at 50% 50%);
+	}
+	100% {
+		opacity: 1;
+		clip-path: circle(100% at 50% 50%);
+	}
 }
