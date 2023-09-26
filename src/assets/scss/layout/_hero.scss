@@ -1,5 +1,9 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 .hero {
-	padding: 330px 0;
 	// .hero__container
 
 	&__container {
@@ -25,7 +29,6 @@
 	position: fixed;
 	z-index: 2;
 	inset: 0;
-	transition: 1s linear all;
 }
 .box-layer {
 	position: relative;
@@ -33,7 +36,7 @@
 	left: 70px;
 }
 .box {
-	transition: 1s linear all;
+	transition: 600ms linear all;
 	position: relative;
 	z-index: 1;
 	width: 968px;

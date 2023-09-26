@@ -5,7 +5,17 @@ const lines = document.querySelectorAll('.line')
 const btnDistance = btn.offsetTop + btn.offsetHeight
 const rectDistance = rect.offsetTop + rect.offsetHeight
 
-document.addEventListener('mousemove', e => {
+const debounce = (func, delay) => {
+	let timeoutId
+	return (...args) => {
+		clearTimeout(timeoutId)
+		timeoutId = setTimeout(() => {
+			func.apply(null, args)
+		}, delay)
+	}
+}
+
+const handleMouseMove = debounce(e => {
 	const rectOffset = ((e.pageY / rectDistance) * 100) / 3
 	const btnOffset = 100 - e.pageY
 
@@ -21,16 +31,20 @@ document.addEventListener('mousemove', e => {
 			)
 		}
 	} else {
-		rect.style.filter = 'blur(0px)'
-		lines.forEach(line => (line.style.filter = 'blur(0px)'))
+		// const blurValue = Math.max(rectOffset - 10, 0)
+		const blurValue = Math.max((rectOffset / 10) * 2, 0)
+		rect.style.filter = `blur(${blurValue}px)`
+		lines.forEach(line => (line.style.filter = `blur(${blurValue}px)`))
 	}
 
 	if (btn.offsetLeft - e.clientX < 50 && e.pageY - btnDistance < 150) {
 		if (e.pageY < 100) {
-			rect.style.filter = `blur(${Math.min(btnOffset, 60)}px)`
+			rect.style.filter = `blur(${Math.min(btnOffset / 2, 60)}px)`
 			lines.forEach(
 				line => (line.style.filter = `blur(${Math.min(btnOffset, 60)}px)`)
 			)
 		}
 	}
-})
+}, 10)
+
+document.addEventListener('mousemove', handleMouseMove)
