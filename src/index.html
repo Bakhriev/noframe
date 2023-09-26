@@ -16,11 +16,23 @@
 
 			@include('assets/layout/header.html')
 
-			<main class="main">@include('assets/layout/hero.html')</main>
+			<main class="main">
+				@include('assets/layout/hero.html')
+				<div class="layers-wrapper">
+					<div class="blur-layer"></div>
+					<div class="box-layer">
+						<div class="box"></div>
+						<div class="line line-1"></div>
+						<div class="line line-2"></div>
+						<div class="line line-3"></div>
+					</div>
+				</div>
+			</main>
 
 			<!-- Footer -->
 			@include('assets/layout/footer.html')
 		</div>
+
 		<script type="module" src="assets/js/main.js"></script>
 	</body>
 </html>

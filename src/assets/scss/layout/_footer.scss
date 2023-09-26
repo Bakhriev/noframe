@@ -46,7 +46,7 @@
 
 	&__link {
 		display: block;
-		color: #222;
+		color: #fff;
 		font-family: 'Noto Mono';
 		font-size: 19px;
 		font-weight: 400;
@@ -55,7 +55,7 @@
 			color 150ms linear;
 		@include hover {
 			transform: scale(0.9);
-			color: rgb(69, 67, 67);
+			color: rgb(188, 179, 179);
 		}
 		@media screen and (max-width: 768px) {
 			display: none;
