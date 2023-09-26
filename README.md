@@ -1,0 +1,20 @@
+## Использование Gulp 4 Usage of Gulp 4
+
+## Начало работы Getting Started
+
+Для запуска проекта установите зависимости с помощью npm или yarn: <br>
+To start the project, install the dependencies using npm or yarn:
+
+npm install <br>
+npm run dev
+
+или <br> or
+
+yarn <br>
+yarn dev
+
+## SVG спрайт SVG Sprite
+
+<svg>
+    <use xlink:href="assets/img/svg/sprite.svg#arrow"></use>
+</svg>
