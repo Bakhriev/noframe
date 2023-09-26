@@ -5,6 +5,9 @@
 }
 .hero {
 	// .hero__container
+	@media screen and (max-width: 1023px) {
+		padding: 50px 0;
+	}
 
 	&__container {
 	}
@@ -18,6 +21,22 @@
 	font-size: 68px;
 	font-weight: 900;
 	line-height: normal;
+	@media screen and (max-width: 1300px) {
+		font-size: 60px;
+	}
+	@media screen and (max-width: 1200px) {
+		font-size: 54px;
+	}
+	@media screen and (max-width: 1023px) {
+		font-size: 50px;
+	}
+	@media screen and (max-width: 768px) {
+		font-size: 42px;
+	}
+	@media screen and (max-width: 580px) {
+		font-size: 26px;
+	}
+
 	span {
 		color: #fff;
 	}
@@ -29,11 +48,17 @@
 	position: fixed;
 	z-index: 2;
 	inset: 0;
+	@media screen and (max-width: 1023px) {
+		display: none;
+	}
 }
 .box-layer {
 	position: relative;
 	top: 85px;
 	left: 70px;
+	@media screen and (max-width: 1023px) {
+		display: none;
+	}
 }
 .box {
 	transition: 600ms linear all;
@@ -41,12 +66,7 @@
 	z-index: 1;
 	width: 968px;
 	height: 500px;
-	// background: linear-gradient(
-	// 		202deg,
-	// 		rgba(0, 255, 56, 0.2) 14.43%,
-	// 		rgba(255, 0, 0, 0) 92.13%
-	// 	),
-	// 	#262725;
+
 	background-color: rgb(31, 77, 41);
 
 	transform: skewX(-12deg);
@@ -95,4 +115,63 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
+}
+.mobile-cards {
+	min-height: 400px;
+	position: relative;
+	display: none;
+	@media screen and (max-width: 1023px) {
+		display: flex;
+	}
+	@media screen and (max-width: 580px) {
+		min-height: 300px;
+	}
+	&__left {
+		position: absolute;
+		z-index: 1;
+		left: -15px;
+		top: -50px;
+		width: 300px;
+		@media screen and (max-width: 768px) {
+			top: -40px;
+			width: 250px;
+		}
+
+		height: 100%;
+		clip-path: polygon(0 0, 100% 0, 71% 100%, 0 100%);
+		background: linear-gradient(
+				202deg,
+				rgba(0, 255, 56, 0.2) 14.43%,
+				rgba(255, 0, 0, 0) 92.13%
+			),
+			#262725;
+	}
+	&__right {
+		position: absolute;
+		right: -15px;
+		top: -90px;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(46, 40, 36);
+		filter: blur(16.5px);
+		@media screen and (max-width: 768px) {
+			top: -70px;
+		}
+	}
+}
+.mobile-menu {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	display: none;
+	@media screen and (max-width: 1023px) {
+		display: flex;
+	}
+	&__link {
+		@media screen and (max-width: 580px) {
+			font-size: 16px;
+		}
+	}
 }

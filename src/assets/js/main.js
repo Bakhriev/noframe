@@ -48,9 +48,6 @@ const handleMouseMove = debounce(e => {
 			)
 		}
 	}
-}, 10)
+}, 15)
 
 document.addEventListener('mousemove', handleMouseMove)
-
-// 	background-color: rgb(50, 31, 68);
-// 	background-color: rgb(31, 77, 41);

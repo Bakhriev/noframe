@@ -105,3 +105,20 @@
 	-webkit-clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
 	clip-path: polygon(6% 0, 100% 18%, 100% 83%, 0% 100%);
 }
+
+.link {
+	width: max-content;
+	color: #000;
+	font-family: 'Noto Mono';
+	font-size: 19px;
+	font-weight: 400;
+	line-height: normal;
+	display: block;
+	transition:
+		transform 150ms linear,
+		color 150ms linear;
+	@include hover {
+		transform: scale(0.9);
+		color: rgb(69, 67, 67);
+	}
+}
