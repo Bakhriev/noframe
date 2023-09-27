@@ -1,7 +1,6 @@
 if (window.innerWidth > 1023) {
 	const btn = document.querySelector('.btn')
 	const rect = document.querySelector('.box')
-	const lines = document.querySelectorAll('.line')
 	const blurLayer = document.querySelector('.blur-layer')
 	const duration = 600
 
@@ -28,6 +27,15 @@ if (window.innerWidth > 1023) {
 			window.innerWidth - e.pageX > 200
 		) {
 			if (e.pageY > 100) {
+				rect.animate(
+					{
+						background: `linear-gradient(202deg, rgba(0, 255, ${rectOffset}, 0.2) 14.43%, rgba(${
+							rectOffset * 1.5
+						}, 0, ${rectOffset * 3}, 0.6) 92.13%), #262725`,
+					},
+
+					{duration: duration, easing: 'linear', fill: 'forwards'}
+				)
 				blurLayer.animate(
 					{backdropFilter: `blur(${Math.min(rectOffset, 60)}px)`},
 					{duration: duration, easing: 'linear', fill: 'forwards'}
@@ -40,8 +48,15 @@ if (window.innerWidth > 1023) {
 		} else {
 			const blurValue = Math.max((rectOffset / 10) * 2, 0)
 			blurLayer.animate(
-				{backdropFilter: `blur(${blurValue}px)`},
-				{duration: duration, easing: 'linear', fill: 'forwards'}
+				{
+					backdropFilter: `blur(${blurValue}px)`,
+				},
+				{
+					duration: duration,
+					easing: 'linear',
+
+					fill: 'forwards',
+				}
 			)
 			blurLayer.animate(
 				{webkitBackdropFilter: `blur(${blurValue}px)`},
@@ -59,9 +74,25 @@ if (window.innerWidth > 1023) {
 					{webkitBackdropFilter: `blur(${Math.min(btnOffset / 2, 60)}px)`},
 					{duration: duration, easing: 'linear', fill: 'forwards'}
 				)
+				rect.animate(
+					{
+						background: `linear-gradient(202deg, rgba(0, 255, ${btnOffset}, 0.2) 14.43%, rgba(${
+							btnOffset / 1.2
+						}, 0, ${btnOffset / 1.2}, 0.6) 92.13%), #262725`,
+					},
+
+					{duration: duration, easing: 'linear', fill: 'forwards'}
+				)
 			}
 		}
 	}, 5)
 
 	document.addEventListener('mousemove', handleMouseMove)
 }
+
+// background: linear-gradient(
+// 	202deg,
+// 	rgba(0, 255, 56, 0.2) 14.43%,
+// 	rgba(255, 0, 0, 0) 92.13%
+// ),
+// #262725;
