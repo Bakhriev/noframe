@@ -27,25 +27,36 @@ if (window.innerWidth > 1023) {
 		) {
 			if (e.pageY > 100) {
 				rect.style.filter = `blur(${Math.min(rectOffset, 60)}px)`
-				rect.style.backgroundColor = `rgb(50, 31, ${rectOffset - 10})`
+				rect.style.webkitFilter = `blur(${Math.min(rectOffset, 60)}px)`
 				lines.forEach(
-					line => (line.style.filter = `blur(${Math.min(rectOffset, 60)}px)`)
+					line => (
+						(line.style.filter = `blur(${Math.min(rectOffset, 60)}px)`),
+						(line.style.webkitFilter = `blur(${Math.min(rectOffset, 60)}px)`)
+					)
 				)
 			}
 		} else {
 			const blurValue = Math.max((rectOffset / 10) * 2, 0)
 			rect.style.filter = `blur(${blurValue}px)`
-			rect.style.backgroundColor = `rgb(31, 77, 41)`
+			rect.style.webkitFilter = `blur(${blurValue}px)`
 
-			lines.forEach(line => (line.style.filter = `blur(${blurValue}px)`))
+			lines.forEach(
+				line => (
+					(line.style.filter = `blur(${blurValue}px)`),
+					(line.style.webkitFilter = `blur(${blurValue}px)`)
+				)
+			)
 		}
 
 		if (btn.offsetLeft - e.clientX < 50 && e.pageY - btnDistance < 150) {
 			if (e.pageY < 100) {
 				rect.style.filter = `blur(${Math.min(btnOffset / 2, 60)}px)`
-				rect.style.backgroundColor = `rgb(50, 31, ${rectOffset + 30})`
+				rect.style.webkitFilter = `blur(${Math.min(btnOffset / 2, 60)}px)`
 				lines.forEach(
-					line => (line.style.filter = `blur(${Math.min(btnOffset, 60)}px)`)
+					line => (
+						(line.style.filter = `blur(${Math.min(btnOffset, 60)}px)`),
+						(line.style.webkitFilter = `blur(${Math.min(btnOffset, 60)}px)`)
+					)
 				)
 			}
 		}

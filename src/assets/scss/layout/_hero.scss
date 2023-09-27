@@ -133,6 +133,7 @@
 		height: 100%;
 		background-color: rgb(46, 40, 36);
 		filter: blur(16.5px);
+		-webkit-filter: blur(16.5px);
 		@media screen and (max-width: 768px) {
 			top: -70px;
 		}
