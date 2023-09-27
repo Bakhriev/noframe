@@ -31,7 +31,7 @@ if (window.innerWidth > 1023) {
 					{
 						background: `linear-gradient(202deg, rgba(0, 255, ${rectOffset}, 0.2) 14.43%, rgba(${
 							rectOffset * 1.5
-						}, 0, ${rectOffset * 3}, 0.6) 92.13%), #262725`,
+						}, 0, ${rectOffset * 3}, 0.45) 92.13%), #262725`,
 					},
 
 					{duration: duration, easing: 'linear', fill: 'forwards'}
@@ -78,7 +78,7 @@ if (window.innerWidth > 1023) {
 					{
 						background: `linear-gradient(202deg, rgba(0, 255, ${btnOffset}, 0.2) 14.43%, rgba(${
 							btnOffset / 1.2
-						}, 0, ${btnOffset / 1.2}, 0.6) 92.13%), #262725`,
+						}, 0, ${btnOffset / 1.2}, 0.45) 92.13%), #262725`,
 					},
 
 					{duration: duration, easing: 'linear', fill: 'forwards'}
