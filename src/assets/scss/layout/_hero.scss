@@ -36,7 +36,9 @@
 }
 
 .box-layer {
-	animation: onMountCircle 2s linear;
+	animation: fadeIn 2s linear forwards;
+	animation-delay: 800ms;
+	opacity: 0;
 
 	position: relative;
 	top: 85px;
