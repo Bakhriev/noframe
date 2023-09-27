@@ -54,7 +54,12 @@
 	width: 968px;
 	height: 500px;
 
-	background-color: rgb(31, 77, 41);
+	background: linear-gradient(
+			202deg,
+			rgba(0, 255, 56, 0.2) 14.43%,
+			rgba(255, 0, 0, 0) 92.13%
+		),
+		#262725;
 
 	transform: skewX(-12deg);
 }
