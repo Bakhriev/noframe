@@ -137,12 +137,16 @@
 		width: 100%;
 		height: 100%;
 		background-color: rgb(46, 40, 36);
-		filter: blur(16.5px);
-		-webkit-filter: blur(16.5px);
 		@media screen and (max-width: 768px) {
 			top: -70px;
 		}
 	}
+}
+.blur-layer {
+	position: fixed;
+	z-index: 1;
+	inset: 0;
+	// transition: backdrop-filter 2.2s linear;
 }
 .mobile-menu {
 	position: relative;
@@ -159,4 +163,9 @@
 			font-size: 16px;
 		}
 	}
+}
+.wrapper {
+	position: relative;
+	background-color: #fff;
+	z-index: 5;
 }

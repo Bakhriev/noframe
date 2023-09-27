@@ -2,6 +2,8 @@ if (window.innerWidth > 1023) {
 	const btn = document.querySelector('.btn')
 	const rect = document.querySelector('.box')
 	const lines = document.querySelectorAll('.line')
+	const blurLayer = document.querySelector('.blur-layer')
+	console.log(blurLayer)
 
 	const btnDistance = btn.offsetTop + btn.offsetHeight
 	const rectDistance = rect.offsetTop + rect.offsetHeight
@@ -26,37 +28,36 @@ if (window.innerWidth > 1023) {
 			window.innerWidth - e.pageX > 200
 		) {
 			if (e.pageY > 100) {
-				rect.style.filter = `blur(${Math.min(rectOffset, 60)}px)`
-				rect.style.webkitFilter = `blur(${Math.min(rectOffset, 60)}px)`
-				lines.forEach(
-					line => (
-						(line.style.filter = `blur(${Math.min(rectOffset, 60)}px)`),
-						(line.style.webkitFilter = `blur(${Math.min(rectOffset, 60)}px)`)
-					)
+				blurLayer.animate(
+					{backdropFilter: `blur(${Math.min(rectOffset, 60)}px)`},
+					{duration: 1000, easing: 'linear', fill: 'forwards'}
+				)
+				blurLayer.animate(
+					{webkitBackdropFilter: `blur(${Math.min(rectOffset, 60)}px)`},
+					{duration: 1000, easing: 'linear', fill: 'forwards'}
 				)
 			}
 		} else {
 			const blurValue = Math.max((rectOffset / 10) * 2, 0)
-			rect.style.filter = `blur(${blurValue}px)`
-			rect.style.webkitFilter = `blur(${blurValue}px)`
-
-			lines.forEach(
-				line => (
-					(line.style.filter = `blur(${blurValue}px)`),
-					(line.style.webkitFilter = `blur(${blurValue}px)`)
-				)
+			blurLayer.animate(
+				{backdropFilter: `blur(${blurValue}px)`},
+				{duration: 1000, easing: 'linear', fill: 'forwards'}
+			)
+			blurLayer.animate(
+				{webkitBackdropFilter: `blur(${blurValue}px)`},
+				{duration: 1000, easing: 'linear', fill: 'forwards'}
 			)
 		}
 
 		if (btn.offsetLeft - e.clientX < 50 && e.pageY - btnDistance < 150) {
 			if (e.pageY < 100) {
-				rect.style.filter = `blur(${Math.min(btnOffset / 2, 60)}px)`
-				rect.style.webkitFilter = `blur(${Math.min(btnOffset / 2, 60)}px)`
-				lines.forEach(
-					line => (
-						(line.style.filter = `blur(${Math.min(btnOffset, 60)}px)`),
-						(line.style.webkitFilter = `blur(${Math.min(btnOffset, 60)}px)`)
-					)
+				blurLayer.animate(
+					{backdropFilter: `blur(${Math.min(btnOffset / 2, 60)}px)`},
+					{duration: 1000, easing: 'linear', fill: 'forwards'}
+				)
+				blurLayer.animate(
+					{webkitBackdropFilter: `blur(${Math.min(btnOffset / 2, 60)}px)`},
+					{duration: 1000, easing: 'linear', fill: 'forwards'}
 				)
 			}
 		}
