@@ -3,7 +3,7 @@ if (window.innerWidth > 1023) {
 	const rect = document.querySelector('.box')
 	const lines = document.querySelectorAll('.line')
 	const blurLayer = document.querySelector('.blur-layer')
-	console.log(blurLayer)
+	const duration = 600
 
 	const btnDistance = btn.offsetTop + btn.offsetHeight
 	const rectDistance = rect.offsetTop + rect.offsetHeight
@@ -30,22 +30,22 @@ if (window.innerWidth > 1023) {
 			if (e.pageY > 100) {
 				blurLayer.animate(
 					{backdropFilter: `blur(${Math.min(rectOffset, 60)}px)`},
-					{duration: 1000, easing: 'linear', fill: 'forwards'}
+					{duration: duration, easing: 'linear', fill: 'forwards'}
 				)
 				blurLayer.animate(
 					{webkitBackdropFilter: `blur(${Math.min(rectOffset, 60)}px)`},
-					{duration: 1000, easing: 'linear', fill: 'forwards'}
+					{duration: duration, easing: 'linear', fill: 'forwards'}
 				)
 			}
 		} else {
 			const blurValue = Math.max((rectOffset / 10) * 2, 0)
 			blurLayer.animate(
 				{backdropFilter: `blur(${blurValue}px)`},
-				{duration: 1000, easing: 'linear', fill: 'forwards'}
+				{duration: duration, easing: 'linear', fill: 'forwards'}
 			)
 			blurLayer.animate(
 				{webkitBackdropFilter: `blur(${blurValue}px)`},
-				{duration: 1000, easing: 'linear', fill: 'forwards'}
+				{duration: duration, easing: 'linear', fill: 'forwards'}
 			)
 		}
 
@@ -53,15 +53,15 @@ if (window.innerWidth > 1023) {
 			if (e.pageY < 100) {
 				blurLayer.animate(
 					{backdropFilter: `blur(${Math.min(btnOffset / 2, 60)}px)`},
-					{duration: 1000, easing: 'linear', fill: 'forwards'}
+					{duration: duration, easing: 'linear', fill: 'forwards'}
 				)
 				blurLayer.animate(
 					{webkitBackdropFilter: `blur(${Math.min(btnOffset / 2, 60)}px)`},
-					{duration: 1000, easing: 'linear', fill: 'forwards'}
+					{duration: duration, easing: 'linear', fill: 'forwards'}
 				)
 			}
 		}
-	}, 15)
+	}, 5)
 
 	document.addEventListener('mousemove', handleMouseMove)
 }
